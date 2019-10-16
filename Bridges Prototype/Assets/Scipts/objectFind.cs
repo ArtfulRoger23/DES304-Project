@@ -5,13 +5,12 @@ using UnityEngine;
 public class objectFind : MonoBehaviour
 
 {
-
-    public Transform endTrans;
-
     [SerializeField]
     float interpolation;
 
     float timer = 0;
+
+    public Transform[] endPoints;
 
 
     void Update()
@@ -21,29 +20,25 @@ public class objectFind : MonoBehaviour
         {
             Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10);
             int i = 0;
-            Transform nearest = null;
-            float nearDist = 5;
+            int endPointIndex = 0;
+
             while (i < hitColliders.Length)
             {
-                float thisDist = (transform.position - hitColliders[i].transform.position).sqrMagnitude;
-                if (thisDist < nearDist)
+                if (hitColliders[i].gameObject.tag == "Pickup")
                 {
-                    nearDist = thisDist;
-                    nearest = hitColliders[i].transform;
+                    if (endPointIndex < endPoints.Length)
+                    {
+                        hitColliders[i].gameObject.GetComponent<Rigidbody>().useGravity = false;
+                        hitColliders[i].gameObject.transform.position = Vector3.Lerp(hitColliders[i].gameObject.transform.position, endPoints[endPointIndex].position, timer * interpolation);
+                        endPointIndex++;
+                    }
                 }
-            }
-            if (nearest != null)
-            {
-                GetComponent<Rigidbody>().useGravity = false;
 
-                timer += Time.deltaTime;
-                transform.position = Vector3.Lerp(transform.position, endTrans.position, timer * interpolation);
+                // move on to next collider
+                i++;
             }
+
+            timer += Time.deltaTime;
         }
     }
-
-
-
-
-
 }
