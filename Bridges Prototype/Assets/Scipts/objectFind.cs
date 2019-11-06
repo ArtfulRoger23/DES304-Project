@@ -13,11 +13,11 @@ public class objectFind : MonoBehaviour
 
     public Transform[] endPoints;
 
-    //    public Transform[] finalDestinationPoints;
+    
 
     public Bridge bridge;
 
-    //public Collider[] pickupColliders;
+    
     List<Collider> pickupColliders = new List<Collider>();
 
 
@@ -31,7 +31,7 @@ public class objectFind : MonoBehaviour
             int i = 0;
             int endPointIndex = 0;
 
-            //pickupColliders = hitColliders;
+            
 
             pickupColliders.Clear();
 
@@ -74,44 +74,5 @@ public class objectFind : MonoBehaviour
                 bridgeTimer += Time.deltaTime;
             }
         }
-        
-        
-        
-        
-        //if (Input.GetKey("g"))
-        //{
-        //    // send objects to bridge
-
-        //    // check if there is a valid bridge
-        //    if(bridge != null)
-        //    {
-        //        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 10);
-        //        int i = 0;
-        //        int endPointIndex = 0;
-
-        //        while (i < hitColliders.Length)
-        //        {
-        //            if (hitColliders[i].gameObject.tag == "Pickup")
-        //            {
-        //                if (endPointIndex < bridge.endPoints.Length)
-        //                {
-        //                    hitColliders[i].gameObject.GetComponent<Rigidbody>().useGravity = false;
-        //                    hitColliders[i].gameObject.transform.position = Vector3.Lerp(hitColliders[i].gameObject.transform.position, bridge.endPoints[endPointIndex].position, timer * interpolation);
-        //                    endPointIndex++;
-        //                }
-        //            }
-
-        //            // move on to next collider
-        //            i++;
-        //        }
-
-        //        timer += Time.deltaTime;
-
-        //    }
-        //}
-        //else
-        //{
-        //    timer = 0;
-        //}
     }
 }
