@@ -40,6 +40,7 @@ public class objectFind : MonoBehaviour
                 if (hitColliders[i].gameObject.tag == "Pickup")
                 {
                     pickupColliders.Add(hitColliders[i]);
+
                     if (endPointIndex < endPoints.Length)
                     {
                         hitColliders[i].gameObject.GetComponent<Rigidbody>().useGravity = false;
