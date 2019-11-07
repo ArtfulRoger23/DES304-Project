@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f21c92eb8453b54eaf5b6ffa045c129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interpolation: 0.01
+  interpolation: 0
   endPoints:
   - {fileID: 876493469}
   - {fileID: 2134560285}

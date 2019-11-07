@@ -6,7 +6,7 @@ public class objectFind : MonoBehaviour
 
 {
     [SerializeField]
-    float interpolation;
+   public float interpolation = 0;
 
     float timer = 0;
     float bridgeTimer = 0;
@@ -76,3 +76,7 @@ public class objectFind : MonoBehaviour
         }
     }
 }
+
+
+//disable ability to pickup stones within bridge sphere
+//setup list of bridge end points so no two colliders can share the same point
