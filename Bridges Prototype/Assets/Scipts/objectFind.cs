@@ -6,7 +6,7 @@ public class objectFind : MonoBehaviour
 
 {
     [SerializeField]
-   public float interpolation = 0;
+    float interpolation;
 
     float timer = 0;
     float bridgeTimer = 0;
@@ -69,9 +69,12 @@ public class objectFind : MonoBehaviour
                         pickup.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         pickup.gameObject.transform.position = Vector3.Lerp(pickup.gameObject.transform.position, bridge.endPoints[endPointIndex].position, bridgeTimer * interpolation);
                         endPointIndex++;
+                        
                     }
+                    
                 }
                 bridgeTimer += Time.deltaTime;
+                
             }
         }
     }
