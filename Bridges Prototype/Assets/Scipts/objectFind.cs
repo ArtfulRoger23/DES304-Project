@@ -87,7 +87,7 @@ public class objectFind : MonoBehaviour
 
 
                         float distance = (pickupBridge.endPoints[endPointIndex].position - pickup.gameObject.transform.position).magnitude;
-                        if(distance > 0.01f)
+                        if(distance > 0.5f)
                         {
                             allPickupsInPlace = false;
                         }
