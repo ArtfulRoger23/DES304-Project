@@ -13,11 +13,12 @@ public class objectFind : MonoBehaviour
 
     public Transform[] endPoints;
 
-    
+
 
     public Bridge bridge;
+    public Bridge pickupBridge;
 
-    
+
     List<Collider> pickupColliders = new List<Collider>();
 
 
@@ -59,24 +60,56 @@ public class objectFind : MonoBehaviour
         }
         else
         {
-            if(bridge)
+            if (bridge)
+            {
+                if (pickupBridge == null && pickupColliders.Count > 0)
+                {
+                    // reset bridgeTimer when we activate the pickup bridge
+                    bridgeTimer = 0;
+
+                    pickupBridge = bridge;
+                }
+            }
+
+            if(pickupBridge)
             {
                 int endPointIndex = 0;
+
+                float interpolationTime = bridgeTimer * interpolation;
+
+                bool allPickupsInPlace = true;
                 foreach (var pickup in pickupColliders)
                 {
-                    if (endPointIndex < bridge.endPoints.Length)
+                    if (endPointIndex < pickupBridge.endPoints.Length)
                     {
                         pickup.gameObject.GetComponent<Rigidbody>().useGravity = false;
-                        pickup.gameObject.transform.position = Vector3.Lerp(pickup.gameObject.transform.position, bridge.endPoints[endPointIndex].position, bridgeTimer * interpolation);
+                        pickup.gameObject.transform.position = Vector3.Lerp(pickup.gameObject.transform.position, pickupBridge.endPoints[endPointIndex].position, interpolationTime);
+
+
+                        float distance = (pickupBridge.endPoints[endPointIndex].position - pickup.gameObject.transform.position).magnitude;
+                        if(distance > 0.01f)
+                        {
+                            allPickupsInPlace = false;
+                        }
+
                         endPointIndex++;
                         
                     }
                     
                 }
+
+
+                if (allPickupsInPlace)
+                {
+                    pickupColliders.Clear();
+                    pickupBridge = null;
+                }
+
                 bridgeTimer += Time.deltaTime;
                 
             }
         }
+
     }
 }
 
