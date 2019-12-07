@@ -1,32 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class Bridge : MonoBehaviour
+public class PickupTut : MonoBehaviour
 {
 
-    public Transform[] endPoints;
-    public GameObject Release_Text;
-
+    public GameObject Pickup_Text;
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            other.GetComponent<objectFind>().bridge = this;
-            Release_Text.SetActive(true);
+            Pickup_Text.SetActive(true);
         }
     }
-
 
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
             other.GetComponent<objectFind>().bridge = null;
-            Release_Text.SetActive(false);
+            Pickup_Text.SetActive(false);
         }
     }
-
 }
