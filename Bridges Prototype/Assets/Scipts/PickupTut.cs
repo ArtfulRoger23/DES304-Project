@@ -5,13 +5,13 @@ using UnityEngine;
 public class PickupTut : MonoBehaviour
 {
 
-    public GameObject Pickup_Text;
+    public GameObject TutText;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Pickup_Text.SetActive(true);
+            TutText.SetActive(true);
         }
     }
 
@@ -20,7 +20,7 @@ public class PickupTut : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<objectFind>().bridge = null;
-            Pickup_Text.SetActive(false);
+            TutText.SetActive(false);
         }
     }
 }
