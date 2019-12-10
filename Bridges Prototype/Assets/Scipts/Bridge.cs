@@ -7,7 +7,7 @@ public class Bridge : MonoBehaviour
 {
 
     public Transform[] endPoints;
-    public GameObject Release_Text;
+    
 
 
     void OnTriggerEnter(Collider other)
@@ -15,7 +15,7 @@ public class Bridge : MonoBehaviour
         if(other.tag == "Player")
         {
             other.GetComponent<objectFind>().bridge = this;
-            Release_Text.SetActive(true);
+            
         }
     }
 
@@ -25,7 +25,7 @@ public class Bridge : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<objectFind>().bridge = null;
-            Release_Text.SetActive(false);
+            
         }
     }
 

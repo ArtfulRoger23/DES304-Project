@@ -22005,7 +22005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endPoints:
   - {fileID: 1043447099}
-  Release_Text: {fileID: 0}
 --- !u!135 &865984420
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24826,7 +24825,6 @@ MonoBehaviour:
   - {fileID: 1871814956}
   - {fileID: 205734948}
   - {fileID: 1529577568}
-  Release_Text: {fileID: 0}
 --- !u!135 &988502685
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -27331,7 +27329,6 @@ MonoBehaviour:
   - {fileID: 29991042}
   - {fileID: 344625745}
   - {fileID: 2013790390}
-  Release_Text: {fileID: 0}
 --- !u!135 &1054823647
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30987,7 +30984,6 @@ MonoBehaviour:
   - {fileID: 1449588890}
   - {fileID: 1202400408}
   - {fileID: 629773302}
-  Release_Text: {fileID: 0}
 --- !u!135 &1166617233
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -41738,7 +41734,6 @@ MonoBehaviour:
   - {fileID: 1685979698}
   - {fileID: 1950035156}
   - {fileID: 412159952}
-  Release_Text: {fileID: 3823028}
 --- !u!135 &1570620445
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47344,7 +47339,6 @@ MonoBehaviour:
   - {fileID: 468998831}
   - {fileID: 1071394620}
   - {fileID: 1213170847}
-  Release_Text: {fileID: 3823028}
 --- !u!135 &1792897622
 SphereCollider:
   m_ObjectHideFlags: 0
